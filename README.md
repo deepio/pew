@@ -6,8 +6,7 @@ Pew - Python Env Wrapper
 [![Build status](https://ci.appveyor.com/api/projects/status/xxe096txh1fuqfag/branch/master?svg=true)](https://ci.appveyor.com/project/berdario/pew/branch/master)
 [![PyPi](https://img.shields.io/pypi/format/pew.svg)](https://pypi.python.org/pypi/pew/)
 
-[![Pull Request stats](http://www.issuestats.com/github/berdario/pew/badge/pr?style=flat-square)](http://www.issuestats.com/github/berdario/pew)
-[![Issue stats](http://www.issuestats.com/github/berdario/pew/badge/issue?style=flat-square)](http://www.issuestats.com/github/berdario/pew)
+[Releases & changelog](https://github.com/berdario/pew/releases)
 
 Python Env Wrapper is a set of commands to manage multiple [virtual environments](http://pypi.python.org/pypi/virtualenv). Pew can create, delete and copy your environments, using a single command to switch to them wherever you are, while keeping them in a single (configurable) location.
 
@@ -170,9 +169,9 @@ The `-r` option can be used to specify a text file listing packages to be instal
 
 List or change working virtual environments.
 
-`usage: pew workon [environment_name] [--here]`
+`usage: pew workon [-h] [--no-cd] [envname]`
 
-If no `environment_name` is given the list of available environments is printed to stdout. If `--here` is provided, current directory is not changed even if a project path is associated with `environment_name`.
+If no `envname` is given the list of available environments is printed to stdout. If `-n` or `--no-cd` is provided, current directory is not changed even if a project path is associated with `envname`.
 
 ### mktmpenv ###
 
@@ -291,6 +290,14 @@ Bind an existing virtualenv to an existing project.
 `usage: pew setproject [virtualenv_path] [project_path]`
 
 When no arguments are given, the current virtualenv and current directory are assumed.
+
+### getproject ###
+
+Return a virtualenv's project directory.
+
+`usage: pew getproject [env]`
+
+When no arguments are given, the current virtualenv is assumed.
 
 ### restore ###
 
@@ -435,6 +442,7 @@ Everyone who submitted patches/PR, as of September 2015:
 - Matei Trușcă
 - Lucas Cimon
 - Alexandre Decan
+- Ashwin Vishnu Mohanan
 
 
 Thanks also to Michael F. Lamb for his thought provoking gist and to Doug Hellman for virtualenvwrapper

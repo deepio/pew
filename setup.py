@@ -16,7 +16,7 @@ For the documentation, you might want to read here:
 https://github.com/berdario/pew#usage'''
 
 here = os.path.abspath(os.path.dirname(__file__))
-VERSION = '1.1.5'
+VERSION = '1.2.0'
 
 AUTHOR = os.environ.get('DEBFULLNAME', 'Dario Bertini')
 EMAIL = os.environ.get('DEBEMAIL', 'berdario+pypi@gmail.com')
@@ -78,7 +78,7 @@ setup(
             'pathlib'
         ],
         ':sys_platform=="win32"': [
-            'psutil==5.3.1'
+            'shellingham'
         ],
         'pythonz': [
             'pythonz-bd>=1.10.2'
