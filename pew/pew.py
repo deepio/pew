@@ -166,10 +166,7 @@ def inve(env, command, *args, exec_=False, **kwargs):
 
         if exec_:
             if 'cwd' in kwargs:
-                try:
-                    os.chdir(kwargs['cwd'])
-                except TypeError:
-                    os.chdir(os.getcwd())
+                os.chdir(kwargs['cwd'] or os.getcwd())
             os.execvp(command, [command] + list(args))
         else:
             try:
